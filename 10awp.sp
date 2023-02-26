@@ -6,7 +6,34 @@
 #define primary_clip_size 20
 
 Handle hGetCCSWeaponData;
-char sig[] = "\x55\x89\xE5\x53\x83\xEC\x04\x8B\x45\x08\x85\xC0\x74\x4A\x8B\x15";
+/*
+//basic look like this
+undefined4 GetCCSWeaponData(undefined4 *param_1)
+
+{
+  code *pcVar1;
+  undefined2 uVar2;
+  undefined4 uVar3;
+  
+  if (param_1 == (undefined4 *)0x0) {
+    uVar3 = 0;
+  }
+  else {
+    pcVar1 = *(code **)(DAT_0186d4ac + 8);
+    if (*(code **)*param_1 == FUN_005db3e0) {
+      uVar2 = *(undefined2 *)(param_1 + 2);
+    }
+    else {
+      uVar2 = (**(code **)*param_1)(param_1);
+    }
+    uVar3 = (*pcVar1)(&DAT_0186d4ac,uVar2);
+  }
+  return uVar3;
+}
+
+*/
+char sig[] = "\x85\xC9\x75\x2A\x33\xC0\xC3\x8B\x01"; //win
+//char sig[] = "\x55\x89\xE5\x53\x83\xEC\x04\x8B\x45\x08\x85\xC0\x74\x4A\x8B\x15"; //linux
 
 public void OnPluginStart()  
 {

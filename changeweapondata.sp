@@ -47,7 +47,7 @@ public void OnPluginStart()
 public void OnMapStart()  
 {
 	Address CCSWeaponData = SDKCall(hGetCCSWeaponData, SDKCall(hGetItemDefinitionByName, SDKCall(hGetItemSchema), "weapon_awp"));
-	StoreToAddress(CCSWeaponData + view_as<Address>(primary_clip_size), 5, NumberType_Int32);
+	StoreToAddress(CCSWeaponData + view_as<Address>(primary_clip_size), 10, NumberType_Int32);
 	
 	/*
 	CCSWeaponData = SDKCall(hGetCCSWeaponData, SDKCall(GetItemDefinitionByName, SDKCall(GetItemSchema), "weapon_m4a1_silencer")); // range_modifier back to 0.99

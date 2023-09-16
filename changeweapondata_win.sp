@@ -26,7 +26,7 @@ public void OnPluginStart()
 	hGetItemSchema = EndPrepSDKCall();
 	if(!hGetItemSchema) SetFailState("Could not initialize call to GetItemSchema");
 	
-	Address GetItemDefinitionByName = Dereference(Dereference(SDKCall(hGetItemSchema), 0x4) , 0xa8);
+	Address GetItemDefinitionByName = Dereference(Dereference(SDKCall(hGetItemSchema), 0x4) , 0xa8);//Kit \"[%s]\" specified, but doesn't exist!!
 	StartPrepSDKCall(SDKCall_Raw);
 	PrepSDKCall_SetAddress(GetItemDefinitionByName);
 	PrepSDKCall_AddParameter(SDKType_String, SDKPass_Pointer);
